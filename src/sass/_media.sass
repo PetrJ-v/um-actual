@@ -1,0 +1,502 @@
+@import "vars"
+@import "../libs/bootstrap/scss/mixins/_breakpoints"
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+	//top-line____________________________________________________
+	.top-line
+		&__logo
+			// padding: 15px 0
+			margin: 18px 0
+			width: 80px
+			height: 80px
+		&__logo-description
+			margin: auto 0
+		&__phones
+			margin-top: 16px
+
+	.logo-description__first-line
+		font-size: 25px
+		&--en
+			font-size: 20px
+
+	.logo-description__second-line
+		font-size: 14px
+	//top-line__________________________________________________end
+	.menu__item
+		& a
+			font-size: 13px
+
+	.team-info
+		&__img
+			width: 450px
+			height: auto
+		&__description
+			left: 29%
+			min-height: 140px
+
+	.description-item
+		max-width: 665px
+		&__button
+			min-width: 170px
+			margin-left: 50px
+	//page introduction___________________________________________________start
+	.teacher
+		&__img
+			&:after
+				width: 70%
+				left: 15%
+			&:hover:after
+				left: 0
+				width: 100%
+	//page introduction_____________________________________________________end
+// ≥992px
++media-breakpoint-down(md)
+	//top-line___________________________________________________
+	.top-line
+		&__logo
+			margin: 10px 0
+
+	.top-line__phones
+		display: flex
+		justify-content: space-around
+	.phones-item
+		&:before
+			position: absolute
+			left: 0
+			top: 2px
+			// transform: translateY(-50%)
+			content: '\f095'
+			font-family: FontAwesome
+			font-size: 22px
+			color: $blue
+	.top-line__contacts
+		max-width: 240px
+		margin: 18px auto 0
+		display: flex
+		flex-direction: column
+		padding-bottom: 15px
+	header
+		.top-line__contacts
+			max-width: 245px
+		.phones-item
+			&:before
+				top: 2px
+				content: ''
+				width: 26px
+				height: 30px
+				background: url('../img/icons/phone.png') no-repeat
+				background-size: cover
+	.footer
+		.phones-item
+			max-width: 30%
+			min-width: 30%
+	.footer
+		.top-line__phones
+			margin-top: 25px
+			span
+				padding-top: 10px
+		.phones-item div:last-child
+			padding-top: 7px
+		.top-line__contacts
+			margin-top: 10px
+		.phones-item
+			&:before
+				color: $orange
+
+	.top-line__contacts
+		display: none
+
+	.top-line__phones
+		padding-bottom: 15px
+	.top-line__email, .top-line__location
+		max-width: 100%
+
+	.social-wrapper
+		display: block
+	.top-line__social
+		display: none
+		&_small-display
+			display: block
+
+	.top-line__angle
+		display: block
+	//top-line___________________________________________________end
+	.menu
+		display: none
+
+	.hamburger-wrapper
+		display: block
+
+	.menu__list
+		display: block
+		text-align: left
+
+	.menu__item
+		border: none
+		&:last-of-type
+			border: none
+
+	//header info______________________________________________start
+	.header__info
+		margin: 140px auto 0
+	.header__info
+		&-wrapper
+			padding-bottom: 100px
+	//header info________________________________________________end
+
+	//our target________________________________________________start
+	.target-item
+		&__img
+			width: 130px
+			height: auto
+			&_custom
+				margin-top: 5px
+		&__description
+			&-second-line
+				font-size: 13px
+
+	.team-info
+		&__img
+			width: 400px
+			height: auto
+		&__description
+			font-size: 13px
+			left: 34%
+			min-height: 170px
+
+	.description-item
+		max-width: 459px
+		&__button
+			min-width: 155px
+			margin-left: 30px
+
+	//page introduction___________________________________________________start
+	.teacher
+		.video-item__title
+			font-size: 13px
+	.teacher__more-btn
+		font-size: 14px
+	//page introduction_____________________________________________________end
+
+// ≥768px
++media-breakpoint-down(sm)
+	//header info______________________________________________start
+	.header__info
+		width: 420px
+	//header info________________________________________________end
+	header
+		.phones-item
+			&:first-child
+				margin-right: 5px
+			&:last-child
+				margin-left: 5px
+	.subjects
+		&__button
+			// margin: 20px auto
+	.target-item
+		&__img
+			&_custom
+				margin-top: 18px
+
+	.team-info
+		display: flex
+		flex-direction: column
+		&__img
+			width: 100%
+			position: relative
+			margin-bottom: 20px
+		&__description
+			position: relative
+			width: auto
+			transform: none
+			top: 0
+			left: 0
+
+	.description-item
+		max-width: none
+		& span
+			font-size: 13px
+		&__button
+			min-width: 150px
+			margin-left: 40px
+	.header-slider__item--youtube
+		.header-slider__item-content
+			justify-content: center
+		.header-slider__item-icon
+			margin-top: 20px
+		.header-slider__item-linc
+			margin-top: 20px
+	//page introduction___________________________________________________start
+	.teacher
+		&__img
+			width: 180px
+		&__info
+			text-align: left
+			& span
+				margin-top: 10px
+		&__diplomas
+			&-item
+				width: 200px
+	//page introduction_____________________________________________________end
+
+	.feedback-form
+		&__text
+			font-size: 16px
+
+	.footer
+		.top-line__phones
+			flex-direction: column
+			align-items: center
+		.phones-item
+			margin-bottom: 20px
+			min-width: 290px
+			max-width: 290px
+			&:last-child
+				padding-left: 30px
+			a
+				font-size: 16px
+			span, div:last-child
+				padding-top: 10px
+				font-size: 15px
+				line-height: 1.4
+			.phones-item div:last-child
+				padding-top: 6px
+
+// ≥576px
++media-breakpoint-down(xs)
+	.top-line
+		&__logo
+			width: 50px
+			height: 50px
+
+	.logo-description-wrapper
+		padding: 0
+
+	.logo-description__first-line
+		font-size: 18px
+		&--en
+			font-size: 14px
+	header
+		.logo-description__second-line
+			font-size: 16px
+		.phones-item
+			&:first-child
+				margin-right: 0
+			&:last-child
+				margin-left: 0
+	.social-wrapper
+		display: none
+
+	.top-line__phones, .top-line__contacts
+		max-width: 240px
+		margin-left: auto
+		margin-right: auto
+		&:after
+			display: none
+	.top-line__phones
+		flex-direction: column
+	.hamburger
+		padding-left: 10px
+
+	//header info______________________________________________start
+	.header__info
+		width: 280px
+		margin: 65px auto 0
+	.header__info
+		&-wrapper
+			padding: 30px 20px
+			padding-bottom: 100px
+		&-title
+			font-size: 24px
+		&-description
+			font-size: 14px
+		&-button
+			margin: 35px auto 0
+			font-size: 17px
+	//header info________________________________________________end
+	.header-slider__item--fb
+		.header-slider__item-content
+			justify-content: center
+		.header-slider__item-content-wrapper
+			display: none
+		.header-slider__item-linc
+			margin-top: 15px
+	.header-slider__item--youtube
+		.header-slider__item-content-wrapper
+			display: none
+		.header-slider__item-icon
+			margin-top: 0
+		.header-slider__item-linc
+			margin-top: 15px
+	// .header-slider
+	// 	&__item
+	// 		flex-direction: column
+	// 	&__item-img
+	// 		max-width: 100%
+	// 	&__item-content
+	// 		min-width: 100%
+	// 		max-width: 100%
+	// 	&__item-top
+	// 		margin-top: 5%
+	// 		font-size: clamp(19px, 6vw, 47px)
+	// 	&__item-bottom
+	// 		font-size: clamp(18px, 4vw, 28px)
+	// 		padding-bottom: 20px
+	.teacher
+		&__img
+			width: 290px
+			margin: 0 auto
+	.description-item
+		flex-direction: column
+		align-items: center
+		& span
+			text-align: center
+			font-size: 15px
+		&__button
+			min-width: 150px
+			margin: 20px auto
+		&:last-of-type button
+			margin-bottom: 0
+
+	//main________________________________________________________start
+	h2, .introduction h1, .learning-materials h1
+		font-size: 22px
+
+	.target-item
+		&__img
+			margin: 25px auto 30px
+			&_custom
+				margin-top: 25px
+
+	.features-list
+		&__item
+			&-img
+				min-width: 50px
+
+	//help-materials______________________________________________________start
+	.help-materials
+		&__img
+			margin: 0 auto 30px
+	//help-materials________________________________________________________end
+
+	//call-back___________________________________________________________start
+	.call-back-form
+		font-size: 15px
+		&__title
+			padding: 50px 10px 40px 10px
+			font-size: 25px
+		&__user-name, &__user-phone, &__user-mail
+			width: 90%
+	//call-back_____________________________________________________________end
+
+	//page materials-item_________________________________________________start
+	.materials-item
+		padding: 40px 0 30px
+		&__img
+			margin-bottom: 20px
+		&__info
+			text-align: center
+	//page materials-item___________________________________________________end
+
+	//page introduction___________________________________________________start
+	.teacher
+		padding-top: 38px
+		&__img
+			margin-bottom: 35px
+			&:after
+				width: 40%
+				left: 30%
+			&:hover:after
+				left: 23.5%
+				width: 53%
+		&__diplomas
+			flex-direction: column
+			align-items: center
+	//page introduction_____________________________________________________end
+	//feedbacks __________________________________________________________start
+	.feedback
+		padding: 15px
+		&__text
+			font-size: 16px
+	.feedback-form
+		.input-wrapper
+			margin-right: 15px
+		&__autor
+			min-width: 270px
+			display: block
+			width: 100%
+			// margin-right: 15px
+
+	//feedbacks ____________________________________________________________end
+
+	//footer______________________________________________________________start
+	.footer
+		.logo-description__second-line
+			font-size: 11px
+		.top-line
+			&__logo-security
+				font-size: 8px
+		.social-wrapper
+			display: block
+		.top-line__social
+			&_small-display
+				display: block
+		.top-line__phones
+			margin-top: 35px
+		.phones-item
+			margin-bottom: 17px
+			// padding-bottom: 15px
+			span, .phones-item div:last-child
+				padding-top: 5px
+				// font-size: 15px
+				// line-height: 1.4
+			// &:last-child
+			// 	padding-left: 30px
+			// 	padding-bottom: 0
+	//footer________________________________________________________________end
+
+@media only screen and (max-width : 368px)
+	.top-line
+		&__logo
+			width: 40px
+			height: 40px
+
+	.logo-description__second-line
+		display: none
+
+	.hamburger
+		padding-left: 0
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+	header
+		.top-line
+			background: url('../img/top-line-bg.jpg') no-repeat
+			background-size: cover
+			background-position: center center
+	.teacher
+		&__img
+			float: left
+			margin-right: 30px
+		// &__info
+		// 	display: inline
+	.teacher-info__left
+		float: left
+		margin-right: 30px
+		margin-bottom: 20px
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+	.footer
+		.phones-item
+			max-width: 220px
+
+// ≤1200px
++media-breakpoint-up(xl)

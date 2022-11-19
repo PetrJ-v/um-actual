@@ -1,0 +1,1320 @@
+@import "vars"
+@import "fonts"
+
+//common styles______________________________
+*
+	margin: 0
+	padding: 0
+
+p
+	&:last-of-type
+		margin-bottom: 0
+a
+	outline: none
+	&:hover, &:focus
+		outline: none
+.mt-25
+	margin-top: 25px
+.mt-35
+	margin-top: 35px
+button, button:focus, button:active 
+	outline: none
+	cursor: pointer
+
+.button_orange, .button_blue, .button_green
+	display: block
+	height: 39px
+	color: white
+	line-height: 1.4
+	border: none
+	border-radius: 7px
+	text-align: center
+
+a.button_orange, a.button_blue, .button_green
+	line-height: 39px
+	&:hover
+		color: white
+		text-decoration: none
+
+.button_orange
+	background-color: $orange
+	&:hover, &:focus
+		background-color: $blue
+.button_blue
+	background-color: $blue
+	&:hover, &:focus
+		background-color: $orange
+.button_blue, .button_orange, .button_green
+	&.active
+		position: relative
+		background-color: $light-grey
+		&::after
+			position: absolute
+			content: ''
+			left: 50%
+			bottom: -10px
+			width: 20px
+			height: 3px
+			background-color: $orange
+			transform: translateX(-50%)
+.button_green
+	background-color: $green
+	&:hover
+		background-color: $blue
+.lang__button
+	&:focus
+		background-color: $blue
+.bold
+	font-family: OpenSansBold
+.clear-fix
+	&::after
+		content: ''
+		display: block
+		height: 0
+		clear: both
+
+.img-wrapper
+	line-height: 0
+	img, picture
+		width: 100%
+		height: auto
+body
+	font-family: $default-font
+	font-size: 15px
+	color: $grey
+	min-width: 320px
+	&.no-js
+		.header-slider, .header-slider__item
+			display: flex
+			flex-grow: 1
+			max-width: 100%
+			overflow: hidden
+			// picture
+			// 	min-width: 100%
+			// 	max-width: 100%
+			// 	flex-grow: 1
+
+// header
+// 	.top-line
+// 		background: url('../img/top-line-bg.jpg') no-repeat
+// 		background-size: cover
+// 		background-position: center center
+	// background: url(../img/header-bg.jpg) no-repeat
+	// background-size: cover
+	// background-position: center center
+//top-line____________________________________________________
+.top-line
+	background-color: rgb(245, 249, 251)
+	opacity: 0.859
+	padding: 20px 0
+	&__logo
+		position: relative
+		width: 115px
+		height: 113px
+		margin: 10px 0
+		&-img
+			width: 100%
+			height: auto
+			position: absolute
+			top: 0
+			left: 0
+			transition: 1s
+			&_orange
+				z-index: 2
+				&.top-line__logo-img_active
+					display: none
+			&_blue
+				z-index: 1
+				display: none
+				&.top-line__logo-img_active
+					display: block
+	&__logo-description
+		text-align: center
+		margin: auto 30px
+.lang-btn
+	// position: fixed
+	// top: 0
+	// right: 0
+	display: flex
+	justify-content: center
+	&__item
+		width: 30px
+		margin: 5px
+		padding: 4px 0 5px
+		font-size: 11px
+		line-height: 1
+		text-align: center
+		color: #fff
+		background-color: $blue
+		border-radius: 4px
+		text-decoration: none
+		transition: background-color .3s
+		&:hover, &:focus
+			color: #fff
+			background-color: #3aa0e0
+			text-decoration: none
+		&.active
+			background-color: $orange
+			&:hover, &:focus
+				background-color: #f5b861
+.logo-description__first-line
+	margin: 0
+	font-family: 'JuraDemiBold'
+	text-transform: uppercase
+	font-size: 34px
+	line-height: 0.765
+	letter-spacing: 0.04em
+	color: $blue
+	&--en
+		font-size: 22px
+
+.logo-description__second-line
+	font-size: 16px
+	line-height: 2.29
+.header-slider
+	position: relative
+	&__item
+		display: flex!important
+.header-slider__item
+	.header-slider__item-content
+		display: flex
+		flex-direction: column
+		justify-content: center
+		text-align: center
+	.header-slider__item-top
+		text-transform: uppercase
+		font-size: clamp(19px, 3vw, 47px)
+		letter-spacing: 0.04em
+	.header-slider__item-bottom
+		font-size: clamp(18px, 2vw, 28px)
+		// color: $orange
+	.header-slider__item-icon
+		transition: transform 0.3s
+		&:hover
+			transform: scale(1.1)
+.header-slider__item--first
+	background: url('../img/banner-1-bg.jpg') no-repeat
+	background-size: cover
+	.header-slider__item-img
+		padding: 20px 0 0 15px
+		max-width: 40%
+	.header-slider__item-content
+		min-width: 60%
+		max-width: 60%
+	.header-slider__item-top
+		margin-top: 6%
+		color: $blue
+	.header-slider__item-bottom
+		color: $orange
+
+
+.header-slider__item--fb
+	.header-slider__item-img
+		max-width: 45%
+	.header-slider__item-content
+		display: flex
+		flex-direction: column
+		justify-content: space-around
+		align-items: center
+		min-width: 55%
+		max-width: 55%
+		text-align: center
+		background-color: #999999
+	.header-slider__item-icon
+		max-width: 13%
+	.header-slider__item-top
+		text-transform: uppercase
+		font-size: clamp(17px, 3vw, 47px)
+		letter-spacing: 0.04em
+		color: #ffffff
+	.header-slider__item-bottom
+		font-size: clamp(16px, 2vw, 28px)
+		color: #ffffff
+	.header-slider__item-linc
+		padding: 0 20px
+		font-size: clamp(12px, 2vw, 28px)
+		color: #fff
+		transition: color 0.3s
+		&:hover
+			color: $orange
+.header-slider__item--youtube
+	.header-slider__item-img
+		max-width: 42.25%
+	.header-slider__item-content
+		display: flex
+		flex-direction: column
+		justify-content: space-around
+		align-items: center
+		min-width: 57%
+		// max-width: 55%
+		text-align: center
+		background-color: #77091c
+	.header-slider__item-icon
+		max-width: 13%
+	.header-slider__item-top
+		color: #ffffff
+		// font-size: clamp(19px, 3vw, 47px)
+		// text-transform: uppercase
+	// 	letter-spacing: 0.04em
+	.header-slider__item-bottom
+		color: #ffffff
+	// 	font-size: clamp(18px, 2vw, 28px)
+	.header-slider__item-linc
+		color: #fff
+		// padding: 0 20px
+		font-size: clamp(14px, 2vw, 28px)
+.slick-arrow
+	position: absolute
+	top: 50%
+	background-color: transparent
+	border: none
+	transform: translateY(-50%)
+	z-index: 2
+	transition: transform 0.3s
+	&:hover
+		transform: translateY(-50%) scale(0.9)
+		
+.next-arrow
+	right: 20px
+.prev-arrow
+	left: 20px
+.slick-dots
+	display: flex
+	justify-content: center
+	margin: 10px 0 0
+	li
+		list-style: none
+	button
+		margin: 0 10px
+		display: block
+		width: 7px
+		height: 7px
+		font-size: 0
+		line-height: 0
+		background-color: $blue
+		border: none
+		// border-radius: 50%
+	.slick-active button
+		background-color: $orange
+	// position: absolute
+	// display: flex
+	// justify-content: center
+	// left: 50%
+	// bottom: -20px
+	// transform: translateX(-50%)
+header
+	.logo-description__first-line, .logo-description__second-line
+		font-family: 'MyriadProRegular'
+	.logo-description__second-line
+		margin-top: 5px
+		display: block
+		font-size: 22px
+		line-height: 1
+		color: $orange
+.top-line__angle
+	display: none
+	text-align: center
+	font-size: 35px
+	line-height: 1
+	color: $orange
+	& i
+		cursor: pointer
+		transition: .5s
+	&_slide-up
+		transform: rotate(180deg)
+
+.top-line__phones, .top-line__email, .top-line__location
+	position: relative
+	text-align: left
+	line-height: 1.067
+	& a
+		font-family: OpenSansBold
+		font-size: 15px
+		color: $grey
+		text-decoration: none
+		cursor: pointer
+		&:hover
+			color: $orange
+	& span
+		display: inline-block
+		font-size: 12px
+		line-height: 1.8
+
+.top-line__phones
+	margin-top: 25px
+header
+	.top-line__phones, .top-line__email, .top-line__location
+		a
+			font-family: 'MyriadProRegular'
+			font-size: 17px
+			color: #000
+.phones-item
+	position: relative
+	padding-left: 30px
+	&:first-of-type
+		margin-bottom: 10px
+		&:before
+			position: absolute
+			left: 0
+			top: 2px
+			content: '\f095'
+			font-family: FontAwesome
+			font-size: 22px
+			color: $blue
+	&:last-of-type
+		padding: 0 0 0 30px
+.top-line__email
+	padding: 0 0 5px 30px
+	&:first-of-type
+		&:before
+			position: absolute
+			left: 0
+			top: 50%
+			transform: translateY(-50%)
+			// content: url(../img/icons/email-blue.png)
+	& a
+		font-family: $default-font
+.top-line__contacts
+	margin-top: 18px
+
+.top-line__location
+	padding: 5px 0 0 30px
+	&:before
+		position: absolute
+		left: 3px
+		top: 50%
+		transform: translateY(-50%)
+		content: url(../img/icons/location-blue.png)
+	& a
+		font-family: $default-font
+		line-height: 20px
+	& span
+		display: block
+		line-height: 1
+header
+	.top-line__email
+		padding-left: 35px
+		&:first-of-type
+			&:before
+				width: 26px
+				height: 26px
+				content: ''
+				background: url('../img/icons/email-black.png') no-repeat
+				background-size: cover
+	.phones-item
+		padding-left: 35px
+		&:last-of-type
+			padding-left: 35px
+		span
+			font-family: 'MyriadProRegular'
+			font-size: 14px
+			color: #000
+		&:first-of-type
+			&:before
+				top: 2px
+				content: ''
+				width: 26px
+				height: 30px
+				background: url('../img/icons/phone.png') no-repeat
+				background-size: cover
+	.top-line__location
+		padding: 5px 0 0 35px
+		span
+			font-family: 'MyriadProRegular'
+			font-size: 14px
+			color: #000
+		&:before
+			left: -2px
+			width: 32px
+			height: 32px
+			content: ''
+			background: url('../img/icons/location-black.png') no-repeat
+			background-size: cover
+			transform: translateY(-40%)
+.social-wrapper
+	display: none
+
+.top-line__social
+	text-align: right
+	&-facebook, &-instagram
+		display: inline-block
+		width: 23px
+		height: 22px
+	&-facebook
+		background-image: url(../img/icons/facebook.png)
+		&:hover
+			background-image: url(../img/icons/facebook-hovered.png)
+	&-instagram
+		background-image: url(../img/icons/instagram.png)
+		&:hover
+			background-image: url(../img/icons/instagram-hovered.png)
+	&_small-display
+		display: none
+		.top-line__social
+			&-facebook, &-instagram
+				margin-top: 6px
+//top-line___________________________________________________end
+
+.menu
+	background-color: $blue
+
+.menu__list
+	display: flex
+	text-align: justify
+	justify-content: center
+	list-style: none
+	padding: 0
+	margin: 0
+
+.menu__item
+	text-align: center
+	flex-grow: 1
+	border-left: 1px solid
+	border-color: rgba(255, 255, 255, 0.2)
+	&:last-of-type
+		border-right: 1px solid
+		border-color: rgba(255, 255, 255, 0.2)
+	& a
+		display: block
+		height: 100%
+		padding-top: 12px
+		padding-bottom: 12px
+		color: white
+		line-height: 1.733
+		&_active, &:hover
+			text-decoration: none
+	&_active, &:hover
+		background-color: $orange
+			
+
+.hamburger-wrapper
+	display: none
+
+.hamburger
+	padding: 5px 0 0 0
+	&:focus
+		border: none
+		outline: none
+
+.hamburger-inner, .hamburger-inner:before, .hamburger-inner:after
+	background-color: $blue
+
+.header__info
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	width: 500px
+	margin: 0 auto
+	padding: 38px 20px
+	text-align: center
+	background-color: white
+	opacity: 0.67
+	border-radius: 7px
+	z-index: 2
+	// &-wrapper
+	// 	padding-bottom: 145px
+	&-title
+		font-family: JuraDemiBold
+		font-weight: 400
+		font-size: 34px
+		line-height: 0.765
+		letter-spacing: 0.04em
+		text-transform: uppercase
+		color: $grey
+		text-shadow: 0px 0px 5.22px rgba(255, 255, 255, 0.17)
+		padding: 0
+		margin: 0
+	&-description
+		display: block
+		font-family: OpenSansRegular
+		font-size: 19px
+		line-height: 1.354
+		color: $grey
+		text-shadow: 0px 0px 5.22px rgba(255, 255, 255, 0.17)
+		margin-top: 10px
+// header____________________________________________________________end
+
+// main_____________________________________________________________start
+
+.about, .subjects, .our-target, .features, .team, .lessons-features, .preparation-forms, .prices, .problems, .questions, .help-materials, .call-back
+	overflow: hidden
+
+.about
+	background-color: white
+	padding: $section-padding-top 0 $section-padding-bottom/2
+.single-button
+	padding-bottom: 30px
+.subjects
+	background-color: white
+	li
+		list-style: none
+.subjects__buttons-wrapper
+	margin-bottom: $section-padding-bottom
+	display: flex
+	justify-content: center
+	flex-wrap: wrap
+	max-width: 1000px
+	&--lang
+		display: none
+.subjects__button, .lang__button
+	min-width: 200px
+	max-width: 200px
+	margin: 20px 10px 0
+	padding: 0 10px
+	&--type-1
+		line-height: 1.3!important
+		height: auto
+		padding: 5px 10px
+// .subjects__button--roole
+// 	margin: 0 auto
+.lang__button
+	line-height: 39px
+	cursor: pointer
+.rools__list
+	margin-top: 25px
+.subject-description
+	display: none
+	background: #ccc url(../img/preparation-forms-bg.jpg) repeat center
+	ul 
+		li
+			margin-top: 10px
+			&:first-child
+				margin-top: 0
+		ul
+			margin-top: 10px
+			margin-left: 35px
+			li
+				list-style-type: circle
+		.note
+			display: inline-block
+			margin: 10px 0 0 20px
+			font-style: italic
+h2, .introduction h2, .learning-materials h2
+	position: relative
+	font-family: JuraDemiBold
+	font-size: 30px
+	line-height: 1.7
+	text-transform: uppercase
+	color: $blue
+	padding: 18px 0
+	margin: 0
+	&:after
+		position: absolute
+		left: 0
+		bottom: 10px
+		content: ''
+		width: 68px
+		height: 2px
+		background-color: $orange
+
+.our-target
+	background: #ccc url(../img/target-bg.jpg) repeat center
+	background-size: cover
+	background-size: cover
+	padding: $section-padding-top 0 $section-padding-bottom
+
+.target-item
+	&__img
+		display: block
+		margin: 18px auto 30px
+		&_custom
+			margin-top: 11px
+	&__description
+		text-align: center
+		&-first-line
+			display: block
+			font-family: OpenSansBold
+
+.features
+	padding: $section-padding-top 0 $section-padding-bottom
+	& .features-list
+		list-style: none
+		margin-bottom: 0
+		&__item
+			display: flex
+			padding: 12px 0
+			&-img
+				display: flex
+				align-self: center
+				min-width: 60px
+			&:last-of-type
+				padding-bottom: 0
+
+.team
+	padding: $section-padding-top 0 $section-padding-bottom
+
+.team-info
+	&__img
+		display: block
+		position: relative
+	&__description
+		position: absolute
+		top: 50%
+		left: 33%
+		transform: translateY(-50%)
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		min-height: 120px
+.description-item
+	display: flex
+	justify-content: space-between
+	max-width: 765px
+	& span
+		display: block
+		&:first-of-type
+			font-family: OpenSansBold
+	&__button
+		min-width: 188px
+		align-self: flex-end
+		margin-left: 70px
+
+//lessons-features__________________________________________________start
+.lessons-features
+	padding: $section-padding-top 0 $section-padding-bottom
+	&__description
+		display: block
+	& .features-list
+		list-style: none
+		& .features-list__item
+			position: relative
+			line-height: 1.73
+			padding: 17px 0 17px 70px
+			& span
+				display: block
+				&:first-of-type
+					font-family: OpenSansBold
+		& .feature1:before
+			display: block
+			position: absolute
+			left: 0
+			top: 55%
+			transform: translateY(-50%)
+			content: url(../img/icons/lessons-features/feature1.png)
+		& .feature2:before
+			display: block
+			position: absolute
+			left: 0
+			top: 55%
+			transform: translateY(-50%)
+			content: url(../img/icons/lessons-features/feature2.png)
+//lessons-features____________________________________________________end
+
+//preparation-forms-items___________________________________________start
+.preparation-forms
+	padding: $section-padding-top 0 $section-padding-bottom
+	background: #ccc url(../img/preparation-forms-bg.jpg) repeat center
+.preparation-forms-items
+	display: flex
+	justify-content: center
+	.preparation-forms__item
+		& img
+			display: block
+			width: 100%
+			height: auto
+			max-width: 360px
+			margin: 35px auto 0
+		& span
+			display: block
+			position: relative
+			max-width: 360px
+			margin: 0 auto
+			padding-top: 15px
+			font-family: OpenSansBold
+			text-align: center
+			&:before
+				display: block
+				content: ''
+				position: absolute
+				top: 0
+				left: 10%
+				width: 80%
+				height: 4px
+				background-color: $orange
+				transition: .5s
+		&:hover > span:before
+			left: 0
+			width: 100%
+//preparation-forms-items_______________________________________________end
+
+//prices______________________________________________________________start
+.prices
+	padding: $section-padding-top 0 $section-padding-bottom
+	.prices-item
+		background-color: $light-blue
+		border-radius: 7px
+		margin-top: 30px
+		padding: 0 15px
+		&__title, &__messagers, &__time, &__price, &__people-count
+			display: flex
+			justify-content: center
+			align-items: center
+			height: 60px
+			position: relative
+			&:after
+				content: ''
+				width: 80%
+				height: 1px
+				background-color: rgb(0, 110, 178)
+				opacity: 0.09
+				position: absolute
+				bottom: 0
+				left: 10%
+		&__title
+			font-family: OpenSansBold
+		&__messagers
+			text-align: center
+			& img
+				margin-right: 10px
+			& .skype
+				margin-right: 10px
+		&__time, &__people-count
+			& img
+				margin-right: 10px
+		&__price
+			font-family: OpenSansBold
+			color: $orange
+//prices________________________________________________________________end
+
+//problems____________________________________________________________start
+.problems
+	padding: $section-padding-top 0 $section-padding-bottom
+	background: #ccc url(../img/preparation-forms-bg.jpg) repeat center
+	.problems-list
+		list-style: none
+		margin: 20px 0
+		&__item
+			background: url(../img/problems-list-marker.png) no-repeat 0 4px
+			padding: 10px 0 10px 50px
+		&__addition
+			font-family: OpenSansBold
+		
+//problems______________________________________________________________end
+
+//questions___________________________________________________________start
+.questions
+	background-color: white
+	padding: $section-padding-top 0 $section-padding-bottom
+	&-wrapper
+		margin-top: 20px
+	&__item
+		display: block
+		position: relative
+		background-color: $light-blue
+		padding: 10px 0
+		padding-left: 50px 
+		font-family: OpenSansBold
+		&:before
+			content: '?'
+			display: block
+			position: absolute
+			left: 0
+			top: 50%
+			transform: translateY(-50%)
+			font-family: JuraDemiBold
+			color: $orange
+			font-size: 26px
+			line-height: 0.808
+			padding-left: 15px
+
+.answer
+	display: block
+	padding: 15px 0 15px 50px
+//questions_____________________________________________________________end
+
+//help-materials______________________________________________________start
+.help-materials
+	padding: $section-padding-top 0 $section-padding-bottom
+	background: #ccc url(../img/preparation-forms-bg.jpg) repeat center
+	&-wrapper
+		margin-top: 25px
+	&__img
+		display: block
+		width: 100%
+		height: auto
+		max-width: 292px
+		margin-bottom: 30px
+	&-info
+		&__item
+			display: block
+			padding-bottom: 25px
+	&__button
+		display: block
+		margin: 0 auto
+		margin-top: 10px
+		width: 188px
+.partners
+	&__link
+		color: $grey
+		text-decoration: underline
+		transition: color 0.2s
+		&:hover, &:focus
+			color: $orange
+//help-materials________________________________________________________end
+
+//call-back___________________________________________________________start
+// .call-back
+// 	background: #ccc url(../img/call-back-bg.jpg) no-repeat center
+// 	background-size: cover
+// 	& .call-back-form
+// 		margin: 65px auto
+
+// .call-back-form
+	position: relative
+	width: 100%
+	height: auto
+	background-color: $light-blue
+	font-size: 18px
+	text-align: center
+	color: #ccc
+	padding-bottom: 55px
+	z-index: 1
+	&__title
+		display: block
+		padding: 50px 0 40px 0
+		font-family: JuraDemiBold
+		font-size: 30px
+		line-height: 1.2
+		text-transform: uppercase
+		color: $blue
+	&__user-name, &__user-phone, &__user-mail
+		&:before
+			font-family: FontAwesome
+			font-size: 20px
+			line-height: 1
+			color: $orange
+			position: absolute
+			top: 50%
+			left: 25px
+			transform: translateY(-50%)
+	&__user-name:before
+		content: '\f007'
+	&__user-phone:before
+		content: '\f095'
+	&__user-mail:before
+		content: '\f0e0'
+	&__user-name, &__user-phone, &__user-mail
+		position: relative
+		width: 80%
+		margin: 0 auto 15px
+		& input
+			width: 100%
+			padding: 10px 0 10px 56px
+			text-align: left
+			background-color: transparent
+			border: none
+			border-radius: 7px
+			background-color: white
+			border: 1px solid transparent
+			&:focus
+				border: 1px solid $blue
+		& input::placeholder
+			font-size: 15px
+			color: rgba(77, 77, 77, 0.369)
+			line-height: 1.834
+		& input::-moz-placeholder
+			color: rgba(77, 77, 77, 0.6)
+	&__submit-button
+		display: block
+		width: 202px
+		margin: 35px auto 0
+		&:hover
+			cursor: pointer
+			background-color: $blue
+	& .fancybox-close-small
+		position: absolute
+		top: 18px
+		right: 18px
+		width: 40px
+		height: 40px
+		padding: 0
+		margin: 0
+		background-color: transparent
+		color: #009a9e
+
+// .success
+// 	display: none
+// 	position: absolute
+// 	top: 0
+// 	right: 0
+// 	left: 0
+// 	bottom: 0
+// 	z-index: 2
+// 	background-color: $light-blue
+// 	& span
+// 		margin: auto
+// 		color: $grey
+// 		transition: all .5s ease
+//call-back_____________________________________________________________end
+
+//map_________________________________________________________________start
+.map
+	height: 500px
+//map___________________________________________________________________end
+
+
+//page materials-item_________________________________________________start
+.materials-item
+	padding: 58px 0 40px
+	&__img
+		text-align: center
+		& img
+			width: 100%
+			height: auto
+			max-width: 127px
+	.info
+		&__title
+			font-family: OpenSansBold
+			color: $orange
+		&__description
+			margin: 20px 0
+			font-size: 15px
+			line-height: 1.4
+			&-title
+				font-family: OpenSansBold
+			&-link
+				color: #006eb2
+				text-decoration: underline
+				&:hover
+					cursor: pointer
+					text-decoration: none
+	&_backgrounded
+		background: #ccc url(../img/target-bg.jpg) repeat center
+		background-size: cover
+			
+//page materials-item___________________________________________________end
+
+//page introduction___________________________________________________start
+.bread-crumbs
+	&-list
+		display: flex
+		padding-top: 25px
+		margin: 0
+		list-style: none
+		&__item
+			font-size: 12px
+			color: rgba(77, 77, 77, 0.502)
+		&__item a
+			font-size: 12px
+			color: $grey
+			opacity: 0.502
+			&:hover
+				color: $orange
+				text-decoration: none
+// .teachers
+	
+.teacher
+	padding-top: 58px
+	&__intro div
+		text-align: center
+		line-height: 2
+	&__intro-img
+		max-width: 220px
+		margin: 0 auto
+	&__type
+		text-align: center
+	&__name
+		margin-top: 20px
+		text-align: center
+	&__img
+		position: relative
+		width: 290px
+		margin-bottom: 15px
+		& img
+			width: 100%
+			height: auto
+		&:after
+			content: ''
+			position: absolute
+			width: 70%
+			max-width: 291px
+			height: 4px
+			left: 15%
+			bottom: -4px
+			background-color: $orange
+			transition: 0.5s
+		&:hover:after
+			left: 9%
+			width: 82%
+	&-info
+		display: none
+		padding-top: 58px
+		padding-bottom: 20px
+		line-height: 1.867
+		text-align: justify
+		span
+			display: block
+			margin-top: 20px
+			&:first-of-type
+				margin-top: 0
+		a
+			color: $orange
+			text-decoration: underline
+			&:hover, &:focus
+				color: $blue
+		ul
+			list-style-position: outside
+	&__more-btn
+		max-width: 255px
+		margin: 5px auto 0
+		text-align: center
+		cursor: pointer
+		color: $orange
+		border: 1px solid $orange
+		&:hover, &:focus
+			color: $grey
+
+	&__diplomas
+		display: flex
+		justify-content: space-around
+		padding-bottom: 30px
+		&-item
+			position: relative
+			width: 250px
+			height: auto
+			margin-top: 30px
+			&:after
+				content: ''
+				position: absolute
+				left: 35%
+				bottom: -10px
+				width: 30%
+				height: 2px
+				background-color: $orange
+				transition: 0.8s
+			& img
+				width: 100%
+				height: auto
+				border: 1px solid $orange
+				border-radius: 10px
+			&:hover:after
+				left: 0
+				width: 100%
+.teacher-info__left
+	max-width: 250px
+	margin: 0 auto
+.teacher-info__title
+	text-align: center
+.teacher-info__content
+	margin-top: 25px
+	&::after
+		display: block
+		content: ''
+		height: 0
+		font-size: 0
+		clear: both
+
+.close-btn
+	padding: 5px 10px
+	font-size: 13px
+	text-transform: uppercase
+	max-width: 280px
+	cursor: pointer
+	color: $orange
+	text-align: center
+	border: 2px solid $orange
+	&:hover, &:focus
+		color: $grey
+.teacher-info__close-btn
+	margin: 25px auto 0
+.top-line__angle
+	margin-top: 20px
+.video
+	position: relative
+	max-width: 100%
+	padding-bottom: 56.25% 
+	overflow: hidden
+	&--75
+		padding-bottom: 75% 
+	img, iframe, &__link, &__media
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+	&__button
+		position: absolute
+		top: 50%
+		left: 50%
+		z-index: 1
+		display: none
+		padding: 0
+		width: 68px
+		height: 48px
+		border: none
+		background-color: transparent
+		transform: translate(-50%, -50%)
+		cursor: pointer
+.video-title
+	margin-top: 10px
+	text-align: center
+.video__button-shape
+	fill: #212121
+	fill-opacity: 0.8
+
+.video__button-icon
+	fill: #ffffff
+
+.video__button:focus
+	outline: none
+
+.video:hover .video__button-shape, .video__button:focus .video__button-shape
+	fill: #ff0000
+	fill-opacity: 1
+
+/* Enabled */
+.video--enabled
+	cursor: pointer
+
+.video--enabled .video__button
+	display: block
+//page introduction_____________________________________________________end
+
+//footer______________________________________________________________start
+.footer
+	.logo-wrapper
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		max-height: 153px
+	.top-line
+		&__logo
+			margin-top: 0
+		background-color: $blue
+		&__logo-security
+			display: block
+			font-size: 10px
+			text-align: center
+			color: white
+		&__logo-description
+			color: white
+
+	.logo-description__first-line
+		color: white
+	.top-line__phones, .top-line__contacts
+		margin-top: 0
+	.top-line__phones, .top-line__email, .top-line__location
+		& a
+			color: white
+			&:hover
+				color: $orange
+		& span
+			color: white
+			line-height: 1.5
+
+	.phones-item
+		margin-bottom: 10px
+		&__title
+			color: #fff
+		div:last-child
+			font-size: 12px
+			line-height: 1.5
+			color: #fff
+		&:first-of-type
+			&:before
+				color: $orange
+		&:last-of-type
+			margin-bottom: 0
+
+	.top-line__email
+		&:before
+			content: url(../img/icons/email-orange.png)
+			color: $orange
+	.top-line__location
+		&:before
+			content: url(../img/icons/location-orange.png)
+			color: $orange
+//footer________________________________________________________________end
+.feedbacks-wrapper
+	padding: 30px 0
+	background-color:#f6f9fb
+	&.empty
+		.feedbacks
+			height: 0
+		.feedback-form
+			margin-top: 0
+.feedbacks
+	max-height: 100vh
+	padding-right: 15px
+	overflow-y: scroll
+	
+.feedback
+	margin-top: 30px
+	padding: 20px
+	border-radius: 20px
+	background-color: #edfefc
+	background-color: #fff
+	-webkit-box-shadow: 3px 3px 8px -2px rgba(207,207,207,0.83)
+	-moz-box-shadow: 3px 3px 8px -2px rgba(207,207,207,0.83)
+	box-shadow: 3px 3px 8px -2px rgba(207,207,207,0.83)
+	transition: mrgin 0.3s
+	&:first-child
+		margin-top: 0
+	&__date
+		font-size: 14px
+		font-style: italic
+	&__text
+		margin-top: 25px
+		font-size: 18px
+	&__autor
+		margin-top: 25px
+		font-size: 14px
+		font-weight: bold
+.feedback-form
+	margin-top: 30px
+	width: 100%
+	&__text
+		width: 100%
+		min-height: 150px
+		padding: 15px
+		font-size: 18px
+		border: 1px solid #ccc
+		border-radius: 10px
+	&__autor
+		min-width: 400px
+		height: 40px
+		padding: 0 15px
+		line-height: 40px
+		margin-top: 20px
+		border: 1px solid #ccc
+		border-radius: 10px
+	&__btn, .get-feedback__btn
+		min-width: 200px
+		margin-top: 20px
+		font-size: 18px
+		line-height: 39px
+.textarea-wrapper
+	margin-right: 30px
+	position: relative
+	border-radius: 10px
+	overflow: hidden
+.g-recaptcha
+	margin-top: 20px
+.text-danger
+	color: red
+// .rc-anchor
+// 	border-radius: 10px!important
+.success-message
+	display: none
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	// display: flex
+	justify-content: center
+	align-items: center
+	background-color: green
+	&__text
+		text-align: center
+		font-size: 18px
+		line-height: 1.5
+		color: #fff
+.success-accent
+	font-size: 22px
+	// text-transform: uppercase
+.get-feedback__btn
+	margin-top: 20px
+@import "media"
