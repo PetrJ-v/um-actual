@@ -17,7 +17,7 @@ a
 	margin-top: 25px
 .mt-35
 	margin-top: 35px
-button, button:focus, button:active 
+button, button:focus, button:active
 	outline: none
 	cursor: pointer
 
@@ -89,19 +89,6 @@ body
 			flex-grow: 1
 			max-width: 100%
 			overflow: hidden
-			// picture
-			// 	min-width: 100%
-			// 	max-width: 100%
-			// 	flex-grow: 1
-
-// header
-// 	.top-line
-// 		background: url('../img/top-line-bg.jpg') no-repeat
-// 		background-size: cover
-// 		background-position: center center
-	// background: url(../img/header-bg.jpg) no-repeat
-	// background-size: cover
-	// background-position: center center
 //top-line____________________________________________________
 .top-line
 	background-color: rgb(245, 249, 251)
@@ -193,7 +180,8 @@ body
 		&:hover
 			transform: scale(1.1)
 .header-slider__item--first
-	background: url('../img/banner-1-bg.jpg') no-repeat
+	background-image: url('../img/banner-1-bg.jpg')
+	background-repeat: no-repeat
 	background-size: cover
 	.header-slider__item-img
 		padding: 20px 0 0 15px
@@ -273,7 +261,7 @@ body
 	transition: transform 0.3s
 	&:hover
 		transform: translateY(-50%) scale(0.9)
-		
+
 .next-arrow
 	right: 20px
 .prev-arrow
@@ -399,7 +387,8 @@ header
 				width: 26px
 				height: 26px
 				content: ''
-				background: url('../img/icons/email-black.png') no-repeat
+				background-image: url('../img/icons/email-black.png')
+				background-repeat: no-repeat
 				background-size: cover
 	.phones-item
 		padding-left: 35px
@@ -415,7 +404,8 @@ header
 				content: ''
 				width: 26px
 				height: 30px
-				background: url('../img/icons/phone.png') no-repeat
+				background-image: url('../img/icons/phone.png')
+				background-repeat: no-repeat
 				background-size: cover
 	.top-line__location
 		padding: 5px 0 0 35px
@@ -428,7 +418,8 @@ header
 			width: 32px
 			height: 32px
 			content: ''
-			background: url('../img/icons/location-black.png') no-repeat
+			background-image: url('../img/icons/location-black.png')
+			background-repeat: no-repeat
 			background-size: cover
 			transform: translateY(-40%)
 .social-wrapper
@@ -485,7 +476,7 @@ header
 			text-decoration: none
 	&_active, &:hover
 		background-color: $orange
-			
+
 
 .hamburger-wrapper
 	display: none
@@ -575,8 +566,11 @@ header
 	margin-top: 25px
 .subject-description
 	display: none
-	background: #ccc url(../img/preparation-forms-bg.jpg) repeat center
-	ul 
+	background-color: #ccc
+	background-image: url(../img/preparation-forms-bg.jpg)
+	background-repeat: repeat
+	background-position: center
+	ul
 		li
 			margin-top: 10px
 			&:first-child
@@ -609,9 +603,11 @@ h2, .introduction h2, .learning-materials h2
 		background-color: $orange
 
 .our-target
-	background: #ccc url(../img/target-bg.jpg) repeat center
+	background-color: #ccc
+	background-image: url(../img/target-bg.jpg)
+	background-repeat: repeat
 	background-size: cover
-	background-size: cover
+	background-position: center
 	padding: $section-padding-top 0 $section-padding-bottom
 
 .target-item
@@ -785,11 +781,13 @@ h2, .introduction h2, .learning-materials h2
 		list-style: none
 		margin: 20px 0
 		&__item
-			background: url(../img/problems-list-marker.png) no-repeat 0 4px
+			background-image: url(../img/problems-list-marker.png)
+			background-repeat: no-repeat
+			background-position: 0 4px
 			padding: 10px 0 10px 50px
 		&__addition
 			font-family: OpenSansBold
-		
+
 //problems______________________________________________________________end
 
 //questions___________________________________________________________start
@@ -803,7 +801,7 @@ h2, .introduction h2, .learning-materials h2
 		position: relative
 		background-color: $light-blue
 		padding: 10px 0
-		padding-left: 50px 
+		padding-left: 50px
 		font-family: OpenSansBold
 		&:before
 			content: '?'
@@ -982,7 +980,7 @@ h2, .introduction h2, .learning-materials h2
 	&_backgrounded
 		background: #ccc url(../img/target-bg.jpg) repeat center
 		background-size: cover
-			
+
 //page materials-item___________________________________________________end
 
 //page introduction___________________________________________________start
@@ -1003,7 +1001,7 @@ h2, .introduction h2, .learning-materials h2
 				color: $orange
 				text-decoration: none
 // .teachers
-	
+
 .teacher
 	padding-top: 58px
 	&__intro div
@@ -1123,10 +1121,10 @@ h2, .introduction h2, .learning-materials h2
 .video
 	position: relative
 	max-width: 100%
-	padding-bottom: 56.25% 
+	padding-bottom: 56.25%
 	overflow: hidden
 	&--75
-		padding-bottom: 75% 
+		padding-bottom: 75%
 	img, iframe, &__link, &__media
 		position: absolute
 		top: 0
@@ -1239,7 +1237,7 @@ h2, .introduction h2, .learning-materials h2
 	max-height: 100vh
 	padding-right: 15px
 	overflow-y: scroll
-	
+
 .feedback
 	margin-top: 30px
 	padding: 20px

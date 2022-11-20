@@ -18,7 +18,9 @@ global.app = {
 // Импорт задач
 import { copy } from "./gulp/tasks/copy.js"; // Копирует файлы (если такие есть), которые не относятся к верстке напрямую
 import { reset } from "./gulp/tasks/reset.js"; // Очищает папку dist перед сборкой
-import { html } from "./gulp/tasks/html.js"; // Генерирует html из фрагментов
+import { html } from "./gulp/tasks/html/html.js"; // Генерирует html из фрагментов
+import { enHtml } from "./gulp/tasks/html/enHtml.js"; // Генерирует html из фрагментов
+import { ruHtml } from "./gulp/tasks/html/ruHtml.js"; // Генерирует html из фрагментов
 import { server } from "./gulp/tasks/server.js"; // Локакльный сервер для запуска проекта
 import { scss } from "./gulp/tasks/scss.js";
 import { js } from "./gulp/tasks/js.js";
@@ -36,15 +38,15 @@ function watcher(){
 	gulp.watch(path.watch.js, js);
 	gulp.watch(path.watch.images, images);
 	gulp.watch(path.watch.htmlComponents, copy);
-	gulp.watch(path.watch.enHtml, html);
-	gulp.watch(path.watch.ruHtml, html);
+	gulp.watch(path.watch.enHtml, enHtml);
+	gulp.watch(path.watch.ruHtml, ruHtml);
 }
 
 // Последовательная обработка шрифтов
 const fonts = gulp.series(ttfToWoff, fontsStyle);
 
 // Основные задачи
-const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images));
+const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, ruHtml, enHtml, scss, js, images));
 
 // Построение сценария выполнения задач
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));

@@ -46,7 +46,7 @@ isWebp();
 			]
 		})
 	}
-	setupSlider()
+	setupSlider();
 
 	//Загрузка преподавателей---------------------start
 	$.get('../html-components/teachers/teacher--ryzhova-m.html', function (data) {
@@ -86,6 +86,12 @@ isWebp();
 	$.get('../html-components/teachers/teacher-info--olya-v.html', function (data) {
 		$('.teacher-info--olya-v').append(data);
 	});
+	$.get('../html-components/teachers/teacher--olga-en-ger.html', function (data) {
+		$('.teacher--olga-en-ger').append(data);
+	});
+	$.get('../html-components/teachers/teacher-info--olga-en-ger.html', function (data) {
+		$('.teacher-info--olga-en-ger').append(data);
+	});
 	$.get('../html-components/teachers/teacher--vasiliy-b.html', function (data) {
 		$('.teacher--vasiliy-b').append(data);
 	});
@@ -110,12 +116,6 @@ isWebp();
 	$.get('../html-components/teachers/teacher-info--maria-serg.html', function (data) {
 		$('.teacher-info--maria-serg').append(data);
 	});
-	$.get('../html-components/teachers/teacher--veronika-naleta.html', function (data) {
-		$('.teacher--veronika-naleta').append(data);
-	});
-	$.get('../html-components/teachers/teacher-info--veronika-naleta.html', function (data) {
-		$('.teacher-info--veronika-naleta').append(data);
-	});
 	$.get('../html-components/teachers/teacher--sofiya-burceva.html', function (data) {
 		$('.teacher--sofiya-burceva').append(data);
 	});
@@ -134,13 +134,19 @@ isWebp();
 	$.get('../html-components/teachers/teacher-info--ivan-chaban.html', function (data) {
 		$('.teacher-info--ivan-chaban').append(data);
 	});
+	$.get('../html-components/teachers/teacher--oleksandr-harchenko.html', function (data) {
+		$('.teacher--oleksandr-harchenko').append(data);
+	});
+	$.get('../html-components/teachers/teacher-info--oleksandr-harchenko.html', function (data) {
+		$('.teacher-info--oleksandr-harchenko').append(data);
+	});
 	//Загрузка преподавателей-----------------------end
 
 	// Вывод отзывов------------------------------start
 	jQuery.ajax({
 		type: "POST",
 		dataType: "json",
-		url: "/get-feedbacks.php",
+		url: "https://um.in.ua/get-feedbacks.php",
 		error: function (answer) {
 			console.log(answer);
 		},
@@ -174,13 +180,12 @@ isWebp();
 		else{
 			jQuery.ajax({
 				type: "POST",
-				url: "write-feedbacks.php",
+				url: "https://um.in.ua/write-feedbacks.php",
 				data: feedbackData,
 				error: function (answer) {
 					alert(answer);
 				},
 				success: function (answer) {
-
 					let currentFeedback = JSON.parse(answer),
 						successMessage = $('.success-message'),
 						feedbacksWrapper = $('.feedbacks-wrapper');
@@ -598,4 +603,3 @@ isWebp();
 		$('html, body').animate({ scrollTop: dest.offset().top }, duration);
 	};
 })(jQuery);
-
